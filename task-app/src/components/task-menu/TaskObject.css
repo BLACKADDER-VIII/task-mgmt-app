@@ -1,0 +1,17 @@
+.task-object {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.task-info-tab {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+
+.done-btn {
+    border-radius: 50%;
+    height: 50%;
+}

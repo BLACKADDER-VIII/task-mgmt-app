@@ -26,6 +26,20 @@
     background-color: red;
 }
 
+.add-btn-div {
+    display: flex;
+    width: 100%;
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn {
+    width: 30%;
+    height: 70%;
+    cursor: pointer;
+}
+
 .fill-info-grid {
     display: grid;
     grid-template-columns: 1fr 3fr;

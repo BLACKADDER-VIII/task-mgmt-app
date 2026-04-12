@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import './styles/AddTaskPopup.css';
+import './AddTaskPopup.css';
 
 
 export default function AddTaskPopup({ taskArray, setTaskArray, closePopup, setClosePopup }){

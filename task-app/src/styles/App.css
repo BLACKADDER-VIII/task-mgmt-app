@@ -2,12 +2,20 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 10%;
 }
 
 .action-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  height: 10%;
+}
+
+.task-row {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 80%;
 }
 
 
@@ -21,15 +29,40 @@
   border-radius: 20%;
   cursor: pointer;
   background-color: lightyellow;
+  box-shadow: 
+    1px 1px #2980b9,
+    2px 2px #2980b9,
+    3px 3px #2980b9,
+    4px 4px #2980b9,
+    5px 5px #2980b9,
+    6px 6px #2980b9;
+  transition: all 0.15s ease;
+}
+
+.fab-add-task:hover {
+  box-shadow: 
+    1px 1px #2980b9,
+    2px 2px #2980b9,
+    3px 3px #2980b9,
+    4px 4px #2980b9,
+    5px 5px #2980b9,
+    6px 6px #2980b9,
+    7px 7px #2980b9,
+    8px 8px #2980b9;
+  transform: translate(-2px, -2px);
 }
 
 .fab-add-task:hover {
   background-color: yellow;
 }
 
+.fab-add-task:active {
+  box-shadow: 1px 1px #2980b9;
+  transform: translate(7px, 7px);
+}
+
 .bedrock {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  justify-content: space-evenly;
+  height: 100vh;
 }
