@@ -4,12 +4,15 @@ import { useEffect } from 'react';
 import './styles/App.css';
 import AddTaskPopup from './AddTaskPopup';
 import PendingTasks from './components/task-menu/PendingTasks';
+import ProjectMenu from './components/project-menu/ProjectMenu';
+import Project from './class-objects/project';
 
 function App(){
   const [searchItem, setSearchItem] = useState('');
   const [closePop, setClosePop] = useState(1);
   const [tasks, setTasks] = useState([]);   // FIXME!!! Load tasks from DB in the beginning
-
+  const [projects, setProjects] = useState([new Project("All", [], "Global collection of all tasks"), new Project("Dummy", [])])
+  const [currProject, setCurrProject] = useState('All');
   const addTaskHandler = ()=>{
     setClosePop(0);
   }
@@ -23,16 +26,8 @@ function App(){
       </div>
 
       <div className='task-row'>
-        <div className='task-lookup-tile'>
-          Task lookup tile
-          <div className='action-bar'>
-            <button>List View</button>
-            <button>Kanban</button>
-            <button>Calendar</button>
-            <button>Filters</button>
-          </div>
-        </div>
-
+        
+        <ProjectMenu projects={projects} currProject={currProject} setCurrProject={setCurrProject}/>
         <PendingTasks tasks={tasks}/>
       </div>
       <button className='fab-add-task' onClick={addTaskHandler}>+ Add Task</button>

@@ -1,14 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import './AddTaskPopup.css';
+import Project from "./class-objects/project";
+import Task from './class-objects/task';
 
 
 export default function AddTaskPopup({ taskArray, setTaskArray, closePopup, setClosePopup }){
-    if (closePopup==1)
-        return null;
-    
     const [title, setTitle] = useState('');
     const [priority, setPriority] = useState('high');
     const [dueDate, setDueDate] = useState('');
+
+    if (closePopup==1)
+        return null;
 
     const reset = ()=>{
         setTitle('');
@@ -46,7 +48,7 @@ export default function AddTaskPopup({ taskArray, setTaskArray, closePopup, setC
                 <label>Task</label> <input placeholder="Enter task" onChange={(e)=>setTitle(e.target.value)}/>
                 <label>Priority</label> <select className="priority-selector" onChange={(e)=>{setPriority(e.target.value)}}>
                         <option value='high'>High</option>
-                        <option value='medium'>Medium</option>
+                        <option value='normal'>Normal</option>
                         <option value='low'>Low</option>
                     </select> 
                 <label>Due Date</label> <input type='date' onChange={(e)=>setDueDate(e.target.value)}/>

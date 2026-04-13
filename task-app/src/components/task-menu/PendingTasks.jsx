@@ -22,7 +22,7 @@ export default function PendingTasks({tasks}){
             <div className='task-display'>
                 <div className='pending-task-display-board'>
                     <PriorityTile taskList={highList} priorityTitle={"High Priority"}/>
-                    <PriorityTile taskList={medList} priorityTitle={"Medium Priority"}/>
+                    <PriorityTile taskList={medList} priorityTitle={"Normal Priority"}/>
                     <PriorityTile taskList={lowList} priorityTitle={"Low Priority"}/>
                 </div>
                 <div className='completed-task-display-board'>
