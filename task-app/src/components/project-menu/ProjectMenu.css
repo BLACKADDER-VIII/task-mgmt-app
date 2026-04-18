@@ -4,14 +4,14 @@
     outline: 2px solid black;
     border-radius: 5%;
     height: 90%;
-    width: 20%;
+    width: 100%;
 }
 
 .project-menu-header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
-    padding: 5%
+    padding: 5%;
 }
 
 .project-menu-content {

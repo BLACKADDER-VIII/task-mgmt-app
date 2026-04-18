@@ -1,19 +1,27 @@
 export default class Project{
     constructor(title, taskList, description=null){      // Description only for later LLM integration
-        this.title = title;
-        this.taskList = taskList;
-        this.description = description;
+        this._title = title;
+        this._taskList = taskList;
+        this._description = description;
     }
 
-    set setTaskList(newTaskList){
-        this.taskList = newTaskList;
+    set taskList(newTaskList){
+        this._taskList = newTaskList;
     }
 
-    set setDescription(newDescription){
-        this.description = newDescription;
+    set description(newDescription){
+        this._description = newDescription;
     }
 
-    set setTitle(newTitle){
-        this.title = newTitle;
+    set title(newTitle){
+        this._title = newTitle;
+    }
+
+    get taskList(){
+        return this._taskList;
+    }
+
+    get title(){
+        return this._title;
     }
 }
