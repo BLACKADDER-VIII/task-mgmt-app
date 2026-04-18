@@ -14,7 +14,7 @@ function NewProjectTile({ref, setProj, blurHandler}){
     );
 }
 
-export default function ProjectMenu({projectList, setProjectList}){
+export default function ProjectMenu({projectList, setProjectList, setCurrProject}){
 
     const [currNewProj, setCurrNewProj] = useState('untitled');
     const [addingProj, setAddingProj] = useState(false);
@@ -41,7 +41,10 @@ export default function ProjectMenu({projectList, setProjectList}){
                 return;
             }
         }
-        setProjectList([...projectList, new Project(projTitle, [])]);
+        const newProject = new Project(projTitle, []);
+        const updatedProjectList = [...projectList, newProject];
+        setProjectList( updatedProjectList);
+        setCurrProject(newProject);
         resetAddProj();
     }
 
@@ -54,7 +57,7 @@ export default function ProjectMenu({projectList, setProjectList}){
             </div>
 
             <div className="project-menu-content">
-                {projectList.map((e, i)=>{return <div key={i}> <ProjectTile project={e}/></div>  })}
+                {projectList.map((e)=>{return <div key={e.title}> <ProjectTile project={e} setCurrProject={setCurrProject}/></div>  })}
                 {addingProj? <NewProjectTile ref={inputRef} setProj={setCurrNewProj} blurHandler={blurHandler}/>:<button className="project-add-new-btn" onClick={addProjectHandler}>Add New Project btn</button>}
             </div>
         </div>

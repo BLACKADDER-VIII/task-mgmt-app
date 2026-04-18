@@ -5,21 +5,18 @@ import './styles/App.css';
 import Project from './class-objects/project';
 
 import ProjectMenu from './components/project-menu/ProjectMenu';
+import TaskMenu from './components/task-menu/TaskMenu';
 
 function App(){
-  const [searchItem, setSearchItem] = useState('');
-  const [closePop, setClosePop] = useState(1);
-  const [tasks, setTasks] = useState([]);   // FIXME!!! Load tasks from DB in the beginning
   const [projects, setProjects] = useState([new Project("All", [], "Global collection of all tasks"), new Project("Dummy", [])])
-  const [currProject, setCurrProject] = useState('All');
-  const addTaskHandler = ()=>{
-    setClosePop(0);
-  }
+  const [currProject, setCurrProject] = useState(projects.find((p)=>p.title=='All'));
+
 
   // UI
   return (
     <div className = 'bedrock'>
-      <ProjectMenu projectList={projects} setProjectList={setProjects}/>
+      <ProjectMenu projectList={projects} setProjectList={setProjects} setCurrProject={setCurrProject}/>
+      <TaskMenu project={currProject}/>
     </div>
   );
 }

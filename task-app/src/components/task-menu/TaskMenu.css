@@ -1,0 +1,15 @@
+.task-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    outline: 2px solid black;
+    border-radius: 5%;
+    height: 90%;
+}
+
+.task-menu-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    padding: 3%;
+}
