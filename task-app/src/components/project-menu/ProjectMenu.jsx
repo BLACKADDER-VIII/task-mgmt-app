@@ -14,7 +14,7 @@ function NewProjectTile({ref, setProj, blurHandler}){
     );
 }
 
-export default function ProjectMenu({projectList, setProjectList, setCurrProject, completedTaskMap}){
+export default function ProjectMenu({projectList, setProjectList, setCurrProject, currProject, completedTaskMap}){
 
     const [currNewProj, setCurrNewProj] = useState('untitled');
     const [addingProj, setAddingProj] = useState(false);
@@ -54,12 +54,23 @@ export default function ProjectMenu({projectList, setProjectList, setCurrProject
         <div className="project-menu">
             <div className="project-menu-header">
                 <label className="project-menu-header-label">Projects</label>
-                <button className="project-menu-header-filters">Filters logo</button>
+                <button className="header-icon-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="6" y1="12" x2="18" y2="12"/>
+                        <line x1="9" y1="18" x2="15" y2="18"/>
+                    </svg>
+                </button>
             </div>
 
             <div className="project-menu-content">
-                {projectList.map((e)=>{return <div key={e.title}> <ProjectTile project={e} setCurrProject={setCurrProject}/></div>  })}
-                {addingProj? <NewProjectTile ref={inputRef} setProj={setCurrNewProj} blurHandler={blurHandler}/>:<button className="project-add-new-btn" onClick={addProjectHandler}>Add New Project btn</button>}
+                {projectList.map((e)=>{return <div key={e.title}> <ProjectTile project={e} setCurrProject={setCurrProject} isSelected={currProject.title === e.title}/></div>  })}
+                {addingProj? <NewProjectTile ref={inputRef} setProj={setCurrNewProj} blurHandler={blurHandler}/>:<button className="project-add-new-btn" onClick={addProjectHandler}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                </button>}
             </div>
         </div>
     );

@@ -41,7 +41,7 @@ function App(){
   // UI
   return (
     <div className = 'bedrock'>
-      <ProjectMenu projectList={projects} setProjectList={setProjects} setCurrProject={setCurrProject} completedTaskMap={completedTaskMap}/>
+      <ProjectMenu projectList={projects} setProjectList={setProjects} setCurrProject={setCurrProject} currProject={currProject} completedTaskMap={completedTaskMap}/>
       <TaskMenu project={currProject} projectList={projects} completedTaskMap={completedTaskMap} setJustCompleted={setJustCompleted}/>
       <CompletedMenu currProj={currProject} completedTaskMap={completedTaskMap} setJustCompleted={setJustCompleted}/>
     </div>

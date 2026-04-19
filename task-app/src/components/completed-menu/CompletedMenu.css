@@ -3,13 +3,35 @@
     flex-direction: column;
     width: 100%;
     height: 90%;
-    outline: 2px solid black;
-    border-radius: 5%;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+}
+
+.completed-menu-header label {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    color: #1a1a1a;
+}
+
+.completed-menu-content {
+    overflow-y: auto;
+    flex: 1;
 }
 
 .completed-menu-header {
-    padding: 5%;
+    padding: 20px 24px 16px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 }

@@ -1,0 +1,68 @@
+.task-object {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    transition: background 0.12s ease;
+}
+
+.task-object:last-child {
+    border-bottom: none;
+}
+
+.task-object:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.task-check-btn {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #c0c0c0;
+    background: transparent;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+    padding: 0;
+}
+
+.task-check-btn:hover {
+    border-color: #007aff;
+    background: rgba(0, 122, 255, 0.08);
+}
+
+.task-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.task-title {
+    font-size: 14px;
+    font-weight: 450;
+    color: #1a1a1a;
+    cursor: default;
+}
+
+.task-priority {
+    font-size: 11px;
+    font-weight: 500;
+    color: #aaa;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 2px 7px;
+    border-radius: 10px;
+    letter-spacing: 0.2px;
+}
+
+.task-priority--high {
+    color: #e53935;
+    background: rgba(229, 57, 53, 0.1);
+}
+
+.task-due-date {
+    font-size: 11px;
+    color: #aaa;
+    font-weight: 400;
+}
