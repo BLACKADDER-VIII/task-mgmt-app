@@ -14,7 +14,7 @@ function NewProjectTile({ref, setProj, blurHandler}){
     );
 }
 
-export default function ProjectMenu({projectList, setProjectList, setCurrProject}){
+export default function ProjectMenu({projectList, setProjectList, setCurrProject, completedTaskMap}){
 
     const [currNewProj, setCurrNewProj] = useState('untitled');
     const [addingProj, setAddingProj] = useState(false);
@@ -43,6 +43,7 @@ export default function ProjectMenu({projectList, setProjectList, setCurrProject
         }
         const newProject = new Project(projTitle, []);
         const updatedProjectList = [...projectList, newProject];
+        completedTaskMap.set(projTitle, []);
         setProjectList( updatedProjectList);
         setCurrProject(newProject);
         resetAddProj();
