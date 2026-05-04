@@ -30,6 +30,13 @@ export default function ProjectMenu({projectList, setProjectList, setCurrProject
         setCurrNewProj("untitled");
     }
 
+    const deleteProjectHandler = (project) => {
+        setProjectList(projectList.filter(p => p.title !== project.title));
+        if (currProject.title === project.title) {
+            setCurrProject(projectList.find(p => p.title === 'All'));
+        }
+    };
+
     const blurHandler = (projTitle)=>{
         if (projTitle==''){
             resetAddProj();
@@ -64,7 +71,7 @@ export default function ProjectMenu({projectList, setProjectList, setCurrProject
             </div>
 
             <div className="project-menu-content">
-                {projectList.map((e)=>{return <div key={e.title}> <ProjectTile project={e} setCurrProject={setCurrProject} isSelected={currProject.title === e.title}/></div>  })}
+                {projectList.map((e)=>{return <div key={e.title}> <ProjectTile project={e} setCurrProject={setCurrProject} isSelected={currProject.title === e.title} onDelete={deleteProjectHandler}/></div>  })}
                 {addingProj? <NewProjectTile ref={inputRef} setProj={setCurrNewProj} blurHandler={blurHandler}/>:<button className="project-add-new-btn" onClick={addProjectHandler}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                         <line x1="12" y1="5" x2="12" y2="19"/>

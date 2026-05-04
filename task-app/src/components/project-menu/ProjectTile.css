@@ -1,3 +1,45 @@
+.project-tile-settings-wrapper {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.project-tile-dropdown {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 4px);
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    min-width: 120px;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.project-tile-dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.1s ease;
+}
+
+.project-tile-dropdown-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.project-tile-dropdown-item--danger {
+    color: #d32f2f;
+}
+
+.project-tile-dropdown-item--danger:hover {
+    background: rgba(211, 47, 47, 0.08);
+}
+
 .project-tile-settings-btn {
     display: flex;
     align-items: center;
